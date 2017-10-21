@@ -1,7 +1,8 @@
-package com.migcavero.moviedecider
+package com.migcavero.moviedecider.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.migcavero.moviedecider.R
 
 class MainActivity : AppCompatActivity() {
 
