@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_logo_top_margin">24dp</dimen>
+    <dimen name="movie_text_margin_top">8dp</dimen>
+    <dimen name="movie_edit_margin_top">16dp</dimen>
+    <dimen name="add_button_margin_top">8dp</dimen>
+    <dimen name="movie_text_size">24sp</dimen>
+</resources>

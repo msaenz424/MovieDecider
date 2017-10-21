@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MovieDecider</string>
+    <string name="movie_edit_text_hint">enter movies here</string>
+    <string name="add_button_text">add movie</string>
+    <string name="decide_button_text">decide</string>
 </resources>
