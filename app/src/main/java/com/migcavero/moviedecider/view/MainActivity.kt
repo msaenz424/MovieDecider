@@ -3,24 +3,43 @@ package com.migcavero.moviedecider.view
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
 import com.migcavero.moviedecider.R
 import com.migcavero.moviedecider.presenter.MainPresenterImpl
 import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.gms.ads.InterstitialAd
 
 class MainActivity : AppCompatActivity(), MainView {
+
+    lateinit var mInterstitialAd: InterstitialAd
+    lateinit var mMainPresenter: MainPresenterImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mMainPresenter = MainPresenterImpl(this)
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = resources.getString(R.string.ad_unit_id)
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+        mInterstitialAd.adListener = object : AdListener(){
+            override fun onAdClosed() {
+                mMainPresenter.onDecideButtonClick()
+            }
+        }
+
+        mMainPresenter = MainPresenterImpl(this)
 
         add_button.setOnClickListener {
             mMainPresenter.onAddButtonClick(movie_edit_text.text.toString())
         }
 
         decide_button.setOnClickListener {
-            mMainPresenter.onDecideButtonClick()
+            if (mInterstitialAd.isLoaded){
+                mInterstitialAd.show()
+            } else {
+                mMainPresenter.onDecideButtonClick()
+            }
         }
     }
 
