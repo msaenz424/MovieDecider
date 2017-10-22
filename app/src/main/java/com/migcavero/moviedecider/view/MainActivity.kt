@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity(), MainView {
         add_button.setOnClickListener {
             mMainPresenter.onAddButtonClick(movie_edit_text.text.toString())
         }
+
+        decide_button.setOnClickListener {
+            mMainPresenter.onDecideButtonClick()
+        }
     }
 
     override fun clearInputFields() {
@@ -41,7 +45,7 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun showDecidedMovie(movie: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        movie_name_text_view.text = movie
     }
 
 }

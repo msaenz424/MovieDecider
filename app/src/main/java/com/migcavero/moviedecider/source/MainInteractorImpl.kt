@@ -1,5 +1,7 @@
 package com.migcavero.moviedecider.source
 
+import java.util.*
+
 class MainInteractorImpl : MainInteractor {
 
     val mMovieArrayList = arrayListOf<String>()
@@ -13,8 +15,9 @@ class MainInteractorImpl : MainInteractor {
         }
     }
 
-    override fun decideMovie() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun decideMovie(onFinishedListener: MainInteractor.OnFinishedListener) {
+        val random = Random()
+        val randomMovie = random.nextInt(mMovieArrayList.count())
+        onFinishedListener.onDecideMovie(mMovieArrayList[randomMovie])
     }
-
 }

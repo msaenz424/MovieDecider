@@ -14,7 +14,7 @@ class MainPresenterImpl constructor(mainView: MainView) : MainPresenter, MainInt
     }
 
     override fun onDecideButtonClick() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        mMainInteractor.decideMovie(this)
     }
 
     override fun onAddSuccess(arraySize: Int) {
@@ -29,6 +29,10 @@ class MainPresenterImpl constructor(mainView: MainView) : MainPresenter, MainInt
 
     override fun onAddFail() {
         mMainView.displayInputErrorMessage()
+    }
+
+    override fun onDecideMovie(movie: String) {
+        mMainView.showDecidedMovie(movie)
     }
 
 }
