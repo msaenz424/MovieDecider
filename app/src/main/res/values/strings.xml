@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">MovieDecider</string>
-    <string name="movie_edit_text_hint">enter movies here</string>
+    <string name="movie_edit_text_hint">enter a movie</string>
     <string name="add_button_text">add movie</string>
     <string name="decide_button_text">decide</string>
     <string name="input_success_message">Movie added</string>
     <string name="empty_text_error_message">Enter a valid title</string>
+    <string name="result_text">Your result will appear here</string>
 
     <!-- Ad Unit Id-->
     <string name="ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>

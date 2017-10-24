@@ -2,7 +2,7 @@
 <resources>
     <dimen name="main_logo_top_margin">56dp</dimen>
     <dimen name="movie_text_margin_top">24dp</dimen>
-    <dimen name="movie_edit_margin_top">48dp</dimen>
+    <dimen name="movie_edit_margin_top">24dp</dimen>
     <dimen name="add_button_margin_top">16dp</dimen>
     <dimen name="movie_text_size">36sp</dimen>
 </resources>
